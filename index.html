@@ -3,35 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pitch Deck: Romanspa</title>
-     <!-- 1. PASTE ALL THE CSS VARIABLE AND BREAKPOINT CODE HERE -->
-    <style>
-        :root {
-            --bg-color: #040812;
-            --card-bg: #0b1224;
-            --accent-gold: #c5a059;
-            /* ... rest of the optimization styles ... */
-        }
-        /* All slide layout, responsive grid, table, and hover effects go here */
-    </style>
-</head>
-<body>
-
-    <div class="deck-container">
-        <!-- 2. ALL YOUR SLIDE CONTENT (HTML CODES 1 TO 7) GOES HERE -->
-        <section class="slide" id="slide-1">
-            <!-- Slide 1 Content -->
-        </section>
-
-        <section class="slide" id="slide-2">
-            <!-- Slide 2 Content -->
-        </section>
-        
-        <!-- ... and so on up to Slide 7 ... -->
-    </div>
-
-</body>
-</html>
+    <title>Pitch Deck: The Sovereign Corridor Project</title>
     <style>
         :root {
             --bg-color: #050811;
@@ -1822,11 +1794,21 @@
                     <div class="legal-text">
                         "Failure to execute mandatory share transfer forms within thirty (30) days of the exit window notice triggers immediate automated forfeiture of all voting rights, information channels, and board allocations, moving exit capital to secure escrow."
                     </div>
-                
+                </div>
+            </div>
+        </div>
+        
+        <div style="border-top: 1px solid var(--border-color); padding-top: 2rem; margin-top: 2rem; text-align: center;">
+            <h3 style="color: var(--accent-gold); margin-bottom: 0.5rem;">This is not an Investment Advice</h3>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0;"></p>
+        </div>
+    </section>
+
 </div>
 
 </body>
 </html>
+</div></section>
 <section class="slide"><div class="in">
  <span class="tag">Perspective and location</span>
  <h2>Facade, film and site</h2>
@@ -1839,3 +1821,20 @@
   <li><b>Hotel Design and Construction Manual</b> — brand technical standards. <a href="https://drive.google.com/file/d/1zHqV8auZbpbaDJPgbjUOJchyJwGnrIL4/view?usp=sharing" target="_blank" rel="noopener">Open on Google Drive</a></li>
  </ul>
 </div></section>
+
+</div>
+<nav><button id="prev">Back</button><span id="pos"></span><button id="next">Next</button></nav>
+<script>
+const S=[...document.querySelectorAll(".slide")];let i=0;
+function go(n){i=Math.max(0,Math.min(S.length-1,n));S.forEach((s,k)=>s.classList.toggle("on",k===i));S[i].scrollTop=0;
+ document.getElementById("pos").textContent=(i+1)+" of "+S.length;document.getElementById("prev").disabled=i===0;document.getElementById("next").disabled=i===S.length-1}
+document.getElementById("prev").onclick=()=>go(i-1);document.getElementById("next").onclick=()=>go(i+1);
+document.addEventListener("keydown",e=>{if(e.key==="ArrowRight"||e.key===" ")go(i+1);if(e.key==="ArrowLeft")go(i-1)});
+let x0=null;const d=document.getElementById("deck");
+d.addEventListener("touchstart",e=>{x0=e.touches[0].clientX},{passive:true});
+d.addEventListener("touchend",e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>60)go(i+(dx<0?1:-1));x0=null});
+go(0);
+</script>
+</body>
+</html>
+
