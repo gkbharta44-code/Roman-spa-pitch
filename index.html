@@ -3,281 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sovereign Corridor Project - Executive Financial Simulation</title>
+    <title>Pitch Deck - The Sovereign Corridor Project (₹20 Cr Institutional Allocation)</title>
     <style>
         :root {
-            --bg-color: #0a0f1d;
-            --card-bg: #131a30;
-            --accent-gold: #d4af37;
-            --text-main: #e2e8f0;
-            --text-muted: #94a3b8;
+            --bg-color: #060a13;
+            --card-bg: #0d1527;
+            --accent-gold: #c5a059;
+            --text-main: #f1f5f9;
+            --text-muted: #64748b;
             --border-color: #1e293b;
-            --success: #10b981;
+            --success-green: #10b981;
+            --gradient-start: #0f172a;
+            --gradient-end: #020617;
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
-            line-height: 1.6;
             margin: 0;
-            padding: 2rem 1rem;
+            padding: 0;
+            line-height: 1.5;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
+        .slide-container {
+            max-width: 960px;
+            margin: 40px auto;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--accent-gold);
+        }
+
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .slide-number {
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        h1 {
+            color: var(--accent-gold);
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin: 0 0 10px 0;
         }
 
         h2 {
             color: var(--accent-gold);
-            font-size: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.5rem;
-            margin-top: 2.5rem;
+            font-size: 1.6rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-        }
-
-        .highlight-box {
-            background: linear-gradient(135deg, #1e293b 0%, #131a30 100%);
-            border-left: 4px solid var(--accent-gold);
-            padding: 1.5rem;
-            border-radius: 4px;
-            margin-bottom: 2rem;
-        }
-
-        .highlight-box p {
             margin: 0;
-            font-size: 1.1rem;
         }
 
-        .architecture-grid {
+        h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .grid-2 {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1rem;
-            margin: 2rem 0;
+            gap: 30px;
         }
 
         @media (min-width: 768px) {
-            .architecture-grid {
+            .grid-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .grid-3 {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
 
-        .arch-card {
+        .card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 1.5rem;
-            text-align: center;
+            border-radius: 8px;
+            padding: 24px;
         }
 
-        .arch-card .title {
-            color: var(--text-muted);
+        .card-large-num {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: var(--accent-gold);
+            margin-bottom: 5px;
+            line-height: 1;
+        }
+        
+        .card-large-num.green {
+            color: var(--success-green);
+        }
+
+        .card-title {
             font-size: 0.9rem;
             text-transform: uppercase;
-            margin-bottom: 0.5rem;
-        }
-
-        .arch-card .value {
-            color: var(--accent-gold);
-            font-size: 1.8rem;
+            color: var(--text-muted);
             font-weight: bold;
-        }
-
-        .total-box {
-            grid-column: 1 / -1;
-            background-color: #1e1b4b;
-            border: 1px solid #4338ca;
-            padding: 1rem;
-            border-radius: 6px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #fff;
+            letter-spacing: 0.05em;
+            margin-bottom: 10px;
         }
 
         ul {
-            list-style-type: none;
-            padding: 0;
+            padding-left: 20px;
+            margin: 0;
         }
 
         li {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            margin-bottom: 0.75rem;
-            padding: 1rem 1.25rem;
-            border-radius: 6px;
-            display: flex;
-            flex-direction: column;
+            margin-bottom: 12px;
+            color: #e2e8f0;
         }
 
-        @media (min-width: 600px) {
-            li {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-            }
-        }
-
-        .item-label {
-            font-weight: 500;
-        }
-
-        .item-val {
+        li strong {
             color: var(--accent-gold);
-            font-weight: bold;
-            margin-top: 0.25rem;
         }
 
-        @media (min-width: 600px) {
-            .item-val {
-                margin-top: 0;
-            }
-        }
-
-        .subtext {
+        .bullet-sub {
             font-size: 0.85rem;
             color: var(--text-muted);
-            margin-top: 0.25rem;
+            display: block;
+            margin-top: 2px;
         }
 
-        ol {
-            padding-left: 1.25rem;
-        }
-
-        ol li {
-            background-color: transparent;
-            border: none;
-            padding: 0.5rem 0;
-            display: list-item;
-            list-style-type: decimal;
-        }
-
-        ol li::marker {
-            color: var(--accent-gold);
+        .badge {
+            background-color: #1e1b4b;
+            border: 1px solid #4338ca;
+            color: #c7d2fe;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.8rem;
             font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-
-    <h2>Executive Financial Simulation: Annual Revenue Matrix</h2>
-    <div class="highlight-box">
-        <p>Executing the compiled operational logic generates a <strong>Grand Total Net Annual Revenue of ₹379.05 Crore</strong> (exclusive of GST). This projection proves that the asset transitions into a cash engine within the first 12 months, completely outstripping the standard debt architecture.</p>
+    <!-- SLIDE 1: TITLE SLIDE -->
+    <div class="slide-container">
+        <div class="slide-header">
+            <span class="slide-number">Investment Proposal</span>
+            <span class="slide-number">Confidential</span>
+        </div>
+        <h1 style="font-size: 2.8rem; margin-bottom: 5px;">The Sovereign Corridor Project</h1>
+        <div class="subtitle" style="font-size: 1.3rem; color: var(--accent-gold); margin-bottom: 40px;">₹20 Crore Strategic Equity Tranche Syndication</div>
+        
+        <div class="card" style="background: rgba(197, 160, 89, 0.05); border-color: rgba(197, 160, 89, 0.2);">
+            <div class="grid-3" style="text-align: center;">
+                <div>
+                    <div class="card-title">Target Raise</div>
+                    <div class="card-large-num">₹20 Cr</div>
+                    <div class="subtext" style="font-size:0.85rem; color:var(--text-muted);">Growth Equity Tranche</div>
+                </div>
+                <div>
+                    <div class="card-title">Lock-In Tenure</div>
+                    <div class="card-large-num">5 Years</div>
+                    <div class="subtext" style="font-size:0.85rem; color:var(--text-muted);">Compulsory Hard Exit</div>
+                </div>
+                <div>
+                    <div class="card-title">Target Return</div>
+                    <div class="card-large-num" class="green" style="color: var(--success-green);">14% IRR</div>
+                    <div class="subtext" style="font-size:0.85rem; color:var(--text-muted);">Compounded Contractual Cap</div>
+                </div>
+            </div>
+        </div>
+        <p style="margin-top: 40px; color: var(--text-muted); font-size: 0.85rem; text-align: center;">Asset Location: NH-275 Golden Corridor (Bidadi–Bengaluru–Mysuru)</p>
     </div>
 
-    <h2>The Simulated Financial Architecture</h2>
-    <p class="subtext" style="margin-top: -1.5rem; margin-bottom: 1.5rem;">Every revenue model operates strictly net of tax, with 18% GST collected extra to optimize the corporate tax set-off pipeline.</p>
-
-    <div class="architecture-grid">
-        <div class="arch-card">
-            <div class="title">Fixed Subscription Base</div>
-            <div class="value">₹40.25 Cr</div>
-            <div class="subtext">4,900 Active Accounts</div>
+    <!-- SLIDE 2: THE OPPORTUNITY & MACRO HEDGE -->
+    <div class="slide-container">
+        <div class="slide-header">
+            <h2>01. The Macro Arbitrage Opportunity</h2>
+            <span class="slide-number">Slide 02</span>
         </div>
-        <div class="arch-card">
-            <div class="title">On-Premise Windfalls</div>
-            <div class="value">₹228.80 Cr</div>
-            <div class="subtext">Disco + Buyouts + Cover</div>
-        </div>
-        <div class="arch-card">
-            <div class="title">Global Concierge Desk</div>
-            <div class="value">₹110.00 Cr</div>
-            <div class="subtext">Net Marriott Arbitrage</div>
-        </div>
-        <div class="total-box" style="text-align: center;">
-            Grand Total Net System Inflow Baseline: ₹379.05 Crore Net
+        <div class="grid-2">
+            <div>
+                <h3>Monetizing the NH-275 Golden Corridor</h3>
+                <ul>
+                    <li><strong>Industrial Blueprint:</strong> Capturing high-density wealth nodes running from the heavy expat manufacturing zones in <strong>Bidadi</strong> through the tech venture landscape of <strong>Bengaluru</strong> down to the major pharma infrastructure in <strong>Mysuru</strong>.</li>
+                    <li><strong>De-risked Regulatory Architecture:</strong> Bypasses typical Collective Investment Scheme (CIS) traps or RBI public deposit exposures. The model runs on pure, non-refundable commercial <strong>hospitality subscription retainers</strong> and transactional usage cards.</li>
+                    <li><strong>Tax-Optimized Structure:</strong> All base transactions operate strictly net of tax, with the <strong>18% GST collected extra</strong> to allow seamless Input Tax Credit (ITC) corporate set-offs for client firms.</li>
+                </ul>
+            </div>
+            <div class="grid-3" style="grid-template-columns: 1fr; gap: 15px;">
+                <div class="card">
+                    <div class="card-title">Bidadi Manufacturing Node</div>
+                    <p style="margin:0; font-size:0.9rem; color:var(--text-main);">Expat directors, technical auditors, and vendor management desks lacking high-status private infrastructure.</p>
+                </div>
+                <div class="card">
+                    <div class="card-title">Bengaluru Wealth Node</div>
+                    <p style="margin:0; font-size:0.9rem; color:var(--text-main);">Tech founders, real estate promoters, and venture capital syndicates executing high-spend weekend getaways.</p>
+                </div>
+            </div>
         </div>
     </div>
 
-    <h2>1. Fixed Subscriptions & Structural Float (₹40.25 Crore Annual Base)</h2>
-    <ul>
-        <li>
-            <div>
-                <span class="item-label">Individual Accounts (B2C)</span>
-                <div class="subtext">4,000 members × ₹50,000 p.a.</div>
+    <!-- SLIDE 3: DE-LEVERAGED FINANCIAL ARCHITECTURE -->
+    <div class="slide-container">
+        <div class="slide-header">
+            <h2>02. Capital Stack Optimization</h2>
+            <span class="slide-number">Slide 03</span>
+        </div>
+        <div class="subtitle" style="margin-bottom: 20px;">Leveraging Day-1 Upfront Capital to Shield Equity Patrons</div>
+        <div class="grid-2">
+            <div class="card" style="background-color: rgba(16, 185, 129, 0.03); border-color: rgba(16, 185, 129, 0.2);">
+                <div class="badge" style="background-color: #064e3b; border-color: #059669; color: #a7f3d0;">Day-1 Float Injection</div>
+                <div class="card-large-num" style="color: var(--success-green);">+ ₹95.00 Crore</div>
+                <div class="card-title" style="margin-top: 5px;">Upfront Non-Refundable VVIP Advances</div>
+                <p style="margin: 0; font-size: 0.9rem; color: var(--text-main);">Pre-launch syndication of 500 individual VVIP memberships (₹10 Lakh net) and 100 anchor corporate portfolios (₹45 Lakh net) fully funding initial construction milestones.</p>
             </div>
-            <span class="item-val">₹20.00 Crore</span>
-        </li>
-        <li>
             <div>
-                <span class="item-label">Corporate Retainers (B2B)</span>
-                <div class="subtext">900 companies × ₹2,25,000 p.a. (5 cards each)</div>
-            </div>
-            <span class="item-val">₹20.25 Crore</span>
-        </li>
-        <li>
-            <div>
-                <span class="item-label">Balance Sheet Float Buffer</span>
-                <div class="subtext">Permanent, interest-free operational balances (₹25k B2C / ₹1.5L B2B) held strictly on the asset registry</div>
-            </div>
-            <span class="item-val">Based on Wallet Float</span>
-        </li>
-        <li>
-            <div>
-                <span class="item-label">VVIP Advance Matrix</span>
-                <div class="subtext">Captured upfront on Day 1 from 20-Year pre-paid patrons (500 Individuals / 100 Corporates) to bankroll construction</div>
-            </div>
-            <span class="item-val">₹95.00 Crore</span>
-        </li>
-    </ul>
-
-    <h2>2. On-Premise Immersive Windfalls (₹228.80 Crore Annual Base)</h2>
-    <ul>
-        <li>
-            <div>
-                <span class="item-label">Transit Wellness Cover</span>
-                <div class="subtext">10,400 weekday non-member entries p.a. × ₹10,000 consumable floor</div>
-            </div>
-            <span class="item-val">₹10.40 Crore</span>
-        </li>
-        <li>
-            <div>
-                <span class="item-label">Bespoke Audio Discothèque</span>
-                <div class="subtext">4-hour couples' tracks (50 pairs nightly) executing a ₹25k weekday and ₹40k weekend pricing structure</div>
-            </div>
-            <span class="item-val">₹114.40 Crore</span>
-        </li>
-        <li>
-            <div>
-                <span class="item-label">Corporate Banquet Buyouts</span>
-                <div class="subtext">100-delegate luxury events managed by 25 Lady Hosts (2 buyouts/week running a ₹75L weekday / ₹1.25 Cr weekend grid)</div>
-            </div>
-            <span class="item-val">₹104.00 Crore</span>
-        </li>
-    </ul>
-
-    <h2>3. Marriott Global Concierge Arbitrage (₹110.00 Crore Net EBITDA Base)</h2>
-    <p class="subtext" style="margin-top: -1.5rem; margin-bottom: 1.5rem;">This desk leverages a mandatory 50% discount on all Marriott inventory, while pass-through jet flights and celebrity accomplices are billed directly at actual cost.</p>
-    <ul>
-        <li>
-            <div>
-                <span class="item-label">Domestic Track</span>
-                <div class="subtext">100 Indian couples × 2 days @ ₹10 Lakh/day base (₹20.00 Cr Gross)</div>
-            </div>
-            <span class="item-val">₹15.00 Crore <span style="font-size:0.85rem; color:var(--text-muted); font-weight:normal;">Net Retained</span></span>
-        </li>
-        <li>
-            <div>
-                <span class="item-label">Inbound Foreign Track</span>
-                <div class="subtext">100 foreign couples × 5 days @ ₹20 Lakh/day base (₹100.00 Cr Gross)</div>
-            </div>
-            <span class="item-val">₹75.00 Crore <span style="font-size:0.85rem; color:var(--text-muted); font-weight:normal;">Net Retained</span></span>
-        </li>
-        <li>
-            <div>
-                <span class="item-label">Outbound Indian Track</span>
-                <div class="subtext">100 domestic promoter couples × 5 days @ ₹20 Lakh/day base (₹100.00 Cr Gross)</div>
-                <div class="subtext" style="color: var(--accent-gold);">Adjusted down to meet the specific target base limit constraints</div>
-            </div>
-            <span class="item-val">₹20.00 Crore <span style="font-size:0.85rem; color:var(--text-muted); font-weight:normal;">Net Retained</span></span>
-        </li>
-    </ul>
-
-    <h2>Capital Retirement Dynamics (The Absolute Takeover)</h2>
-    <p>Deploying a ₹379.05 Crore annual cash waterfall completely reshapes your capital liabilities:</p>
-    <ol>
-
+                <h3>The Debt Mitigation Strategy</h3>
+                <ul>
