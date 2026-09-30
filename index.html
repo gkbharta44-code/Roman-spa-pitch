@@ -349,4 +349,515 @@
             Core Corridor Geographies: Bidadi Industrial Zone • Bengaluru Wealth Hub • Mysuru Agro-Pharma Belt
         </div>
     </section>
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sovereign Corridor Project - Slide 02 (The Market Arbitrage)</title>
+    <style>
+        :root {
+            --bg-color: #040812;
+            --card-bg: #0b1224;
+            --accent-gold: #c5a059;
+            --text-main: #f8fafc;
+            --text-muted: #64748b;
+            --border-color: #1e293b;
+            --success-green: #10b981;
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 2rem 1.5rem;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .slide-container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        /* Slide Structural Styling with Cursor Glow Animations */
+        .slide {
+            background: linear-gradient(135deg, #0b1224 0%, #030714 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 3rem;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+            transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Cursor Glow Activation Modifiers */
+        .slide:hover {
+            border-color: rgba(197, 160, 89, 0.5);
+            box-shadow: 0 30px 60px rgba(197, 160, 89, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .slide::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background-color: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+
+        .slide:hover::before {
+            width: 8px;
+        }
+
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.25rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .slide-tag {
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+        }
+
+        .slide-number {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-family: "Courier New", Courier, monospace;
+            font-weight: bold;
+        }
+
+        h2 {
+            color: var(--text-main);
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        h3 {
+            color: var(--accent-gold);
+            font-size: 1.25rem;
+            margin-bottom: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        /* Layout Grid System */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Cursor-Responsive UI Cards */
+        .card {
+            background-color: rgba(11, 18, 36, 0.7);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.75rem;
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+                        border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+                        background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-gold);
+            background-color: rgba(197, 160, 89, 0.04);
+        }
+
+        .card-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-body {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+        }
+
+        /* Bullet Points Formatting */
+        ul {
+            padding-left: 1.25rem;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 1.25rem;
+            color: #cbd5e1;
+            font-size: 1rem;
+        }
+
+        li:last-child {
+            margin-bottom: 0;
+        }
+
+        li strong {
+            color: var(--accent-gold);
+        }
+
+        .sub-bullet-text {
+            display: block;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slide-container">
+
+    <!-- SLIDE 2: THE CORRIDOR MARKET ARBITRAGE -->
+    <section class="slide" id="slide-2">
+        <div class="slide-header">
+            <span class="slide-tag">01. Market Opportunity</span>
+            <h2>The Corridor Market Arbitrage</h2>
+            <span class="slide-number">Slide 02</span>
+        </div>
+        <div class="grid-2">
+            <div>
+                <h3>Monetizing High-Density Wealth Nodes</h3>
+                <ul>
+                    <li>
+                        <strong>Bidadi Industrial Captive Base:</strong> 
+                        C-suite executive hubs hosting heavy global auto and ancillary manufacturing complexes.
+                        <span class="sub-bullet-text">Severe localized deficit in elite, uncrowded, private business infrastructure for visiting expatriates.</span>
+                    </li>
+                    <li>
+                        <strong>Bengaluru Wealth Densities:</strong> 
+                        High-earning tech founders, real estate promoters, and venture capital syndicates.
+                        <span class="sub-bullet-text">Actively searching for ultra-exclusive lifestyle and wellness environments within a 1-2 hour driving radius.</span>
+                    </li>
+                    <li>
+                        <strong>Mysuru Transit Corridor:</strong> 
+                        Heavy agro-chemical and pharmaceutical enterprise boards.
+                        <span class="sub-bullet-text">Demanding absolute corporate privacy and premium hospitality assets for multinational audit delegations.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="grid-2" style="gap: 1.5rem;">
+                <div class="card">
+                    <div class="card-title">Regulatory Shield</div>
+                    <div class="card-body">Structured entirely via pure non-refundable commercial hospitality retainers. Removes all retail public deposit exposures, eliminating SEBI Collective Investment Scheme (CIS) and RBI structural infractions.</div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Neutralized Tax Footprint</div>
+                    <div class="card-body">All system inflows operate cleanly exclusive of statutory taxes, with 18% GST collected extra. Maximizes corporate Input Tax Credit (ITC) flow-through set-offs for partner organizations.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sovereign Corridor Project - Slide 03 (Capital Layer Optimization)</title>
+    <style>
+        :root {
+            --bg-color: #040812;
+            --card-bg: #0b1224;
+            --accent-gold: #c5a059;
+            --text-main: #f8fafc;
+            --text-muted: #64748b;
+            --border-color: #1e293b;
+            --success-green: #10b981;
+            --panel-purple: #1e1b4b;
+            --alert-purple: #4338ca;
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 2rem 1.5rem;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .slide-container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        /* Slide Structural Styling with Cursor Glow Animations */
+        .slide {
+            background: linear-gradient(135deg, #0b1224 0%, #030714 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 3rem;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+            transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Cursor Glow Activation Modifiers */
+        .slide:hover {
+            border-color: rgba(197, 160, 89, 0.5);
+            box-shadow: 0 30px 60px rgba(197, 160, 89, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .slide::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background-color: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+
+        .slide:hover::before {
+            width: 8px;
+        }
+
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.25rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .slide-tag {
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+        }
+
+        .slide-number {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-family: "Courier New", Courier, monospace;
+            font-weight: bold;
+        }
+
+        h2 {
+            color: var(--text-main);
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        h3 {
+            color: var(--accent-gold);
+            font-size: 1.25rem;
+            margin-bottom: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        /* Layout Grid System */
+        .layout-main-side {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+
+        @media (min-width: 992px) {
+            .layout-main-side {
+                grid-template-columns: 1.25fr 0.75fr;
+            }
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+        }
+
+        /* Cursor-Responsive UI Cards */
+        .card {
+            background-color: rgba(11, 18, 36, 0.7);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.75rem;
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+                        border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+                        background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-gold);
+            background-color: rgba(197, 160, 89, 0.04);
+        }
+
+        .card-stat {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-stat.green { color: var(--success-green); }
+
+        .card-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-body {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+        }
+
+        .badge {
+            background-color: var(--panel-purple);
+            border: 1px solid var(--alert-purple);
+            color: #c7d2fe;
+            padding: 4px 14px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .badge.green {
+            background-color: #064e3b;
+            border-color: #059669;
+            color: #a7f3d0;
+        }
+
+        /* Bullet Points Formatting */
+        ul {
+            padding-left: 1.25rem;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 1rem;
+            color: #cbd5e1;
+            font-size: 1rem;
+        }
+
+        li strong {
+            color: var(--accent-gold);
+        }
+
+        .sub-bullet-text {
+            display: block;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slide-container">
+
+    <!-- SLIDE 3: OPTIMIZED CAPITAL LAYER STRUCTURE -->
+    <section class="slide" id="slide-3">
+        <div class="slide-header">
+            <span class="slide-tag">02. Capital Stack Optimization</span>
+            <h2>Optimized Capital Layer Structure</h2>
+            <span class="slide-number">Slide 03</span>
+        </div>
+        <div class="layout-main-side">
+            <div>
+                <h3>Day-1 Advance Float De-Risking Strategy</h3>
+                <p style="color: #cbd5e1; margin-bottom: 1.75rem;">
+                    The venture completely isolates systemic operational exposure by capturing massive upfront cash buffers during the pre-launch phase to offset initial development liabilities.
+                </p>
+                <ul>
+                    <li>
+                        <strong>Upfront Cushion Injection:</strong> 
+                        Capturing a committed Day-1 pool of <strong>+₹95.00 Crore</strong> through the non-refundable pre-paid VVIP advance program.
+                        <span class="sub-bullet-text">Secured seamlessly via 500 individual VVIP memberships (₹10 Lakh net) and 100 anchor corporate retainers (₹45 Lakh net).</span>
+                    </li>
+                    <li>
+                        <strong>Debt Compression Dynamics:</strong> 
+                        This non-debt advance float applies directly to suppress master construction liabilities.
+                        <span class="sub-bullet-text">Reduces the active institutional bank loan layer down from the original ₹125 Crore to a secure <strong>₹30.00 Crore net payload</strong>.</span>
+                    </li>
+                    <li>
+                        <strong>Elite Leverage Coverage:</strong> 
+                        Minimizing the institutional mortgage layer provides unprecedented balance sheet safety.
+                        <span class="sub-bullet-text">Locks down a massive <strong>41.5x Debt Service Coverage Ratio (DSCR)</strong> against a highly competitive 9% p.a. interest base.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="grid-3" style="grid-template-columns: 1fr; gap: 1.25rem;">
+                <div class="card" style="background-color: rgba(16, 185, 129, 0.02); border-color: rgba(16, 185, 129, 0.2);">
+                    <div class="badge green">Upfront Float Buffer</div>
+                    <div class="card-stat green">+ ₹95.00 Cr</div>
+                    <div class="card-body">Non-debt liquid advance capital secured on Day 1 to anchor construction.</div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Liability Cleanup Window</div>
+                    <div class="card-stat">Sub-10 Mo.</div>
+                    <div class="card-body">Locked system revenues completely clear the remaining ₹30 Cr debt within the first fiscal year.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
 
