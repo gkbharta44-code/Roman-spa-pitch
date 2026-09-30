@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Romanspa Bidadi Bangalore - Investor Pitch Deck</title>
 
-   :root {
+ :root {
     /* Color Palette Variables */
-    --bg-color: #040812;
-    --card-bg: #0b1224;
+    --bg-color: #050811;
+    --card-bg: #0b1120;
     --accent-gold: #c5a059;
     --text-main: #f8fafc;
     --text-muted: #64748b;
@@ -45,6 +45,310 @@ body {
 .slide {
     background: linear-gradient(135deg, #0b1224 0%, #030714 100%);
     border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 3rem;
+    margin-bottom: 4rem;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Cursor Interactive Glow Modifiers */
+.slide:hover {
+    border-color: rgba(197, 160, 89, 0.5);
+    box-shadow: 0 30px 60px rgba(197, 160, 89, 0.12);
+    transform: translateY(-2px);
+}
+
+.slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background-color: var(--accent-gold);
+    transition: width 0.3s ease;
+}
+
+.slide:hover::before {
+    width: 8px;
+}
+
+/* Slide Typography & Header Mechanics */
+.slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.25rem;
+    margin-bottom: 2.5rem;
+}
+
+.slide-tag {
+    font-size: 0.8rem;
+    color: var(--accent-gold);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+}
+
+.slide-number {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-family: var(--code-font);
+    font-weight: bold;
+}
+
+h1 {
+    color: var(--accent-gold);
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    color: var(--text-main);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+h3 {
+    color: var(--accent-gold);
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+}
+
+/* Responsive Structural Grid Mechanics */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+    .grid-2 {
+        grid-template-columns: 1fr 1fr;
+    }
+    .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.layout-main-side {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+@media (min-width: 992px) {
+    .layout-main-side {
+        grid-template-columns: 1.25fr 0.75fr;
+    }
+}
+
+/* UI Card Vectors */
+.card {
+    background-color: rgba(11, 18, 36, 0.7);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.75rem;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+                border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+                background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-gold);
+    background-color: rgba(197, 160, 89, 0.04);
+}
+
+.card-stat {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.card-stat.green { color: var(--success-green); }
+.card-stat.red { color: var(--alert-red); }
+
+.card-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+}
+
+.card-body {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+}
+
+/* Bullet Points Lists Formatting */
+ul {
+    padding-left: 1.25rem;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 1rem;
+    color: #cbd5e1;
+    font-size: 1rem;
+}
+
+li strong {
+    color: var(--accent-gold);
+}
+
+.sub-bullet-text {
+    display: block;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+}
+
+/* High-Legibility Data Tables */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: #070c17;
+    margin: 1.5rem 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th {
+    background-color: #0b1224;
+    color: var(--accent-gold);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 14px 18px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+td {
+    padding: 14px 18px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--border-color);
+    color: #cbd5e1;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+tr:hover td {
+    background-color: rgba(255, 255, 255, 0.03);
+    color: #fff;
+}
+
+.num-right { text-align: right; }
+.font-mono { font-family: var(--code-font); }
+
+/* Badges and Banners */
+.badge {
+    background-color: var(--panel-purple);
+    border: 1px solid var(--alert-purple);
+    color: #c7d2fe;
+    padding: 4px 14px;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.badge.green {
+    background-color: #064e3b;
+    border-color: #059669;
+    color: #a7f3d0;
+}
+
+.total-banner {
+    background-color: var(--panel-purple);
+    border: 1px solid var(--alert-purple);
+    padding: 1.25rem;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.02em;
+}
+
+/* Shareholders Legal Frame Elements */
+.legal-frame {
+    background-color: #060a14;
+    border-left: 3px solid var(--accent-gold);
+    padding: 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 1.5rem;
+    transition: background-color 0.25s ease, border-left-width 0.25s ease;
+}
+
+.legal-frame:hover {
+    background-color: rgba(197, 160, 89, 0.03);
+    border-left-width: 5px;
+}
+
+.legal-caption {
+    font-size: 0.85rem;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.5rem;
+}
+
+.legal-text {
+    font-family: var(--code-font);
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* Slide Media Elements (Images/Perspective Mockups) */
+.slide img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-top: 1rem;
+    border: 1px solid var(--border-color);
+}
+
     border-radius: 12px;
     padding: 3rem;
     margin-bottom: 4rem;
