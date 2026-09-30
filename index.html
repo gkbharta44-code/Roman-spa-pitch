@@ -860,4 +860,952 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sovereign Corridor Project - Slide 04 (High-Velocity Yield Architecture)</title>
+    <style>
+        :root {
+            --bg-color: #040812;
+            --card-bg: #0b1224;
+            --accent-gold: #c5a059;
+            --text-main: #f8fafc;
+            --text-muted: #64748b;
+            --border-color: #1e293b;
+            --success-green: #10b981;
+            --panel-purple: #1e1b4b;
+            --alert-purple: #4338ca;
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 2rem 1.5rem;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .slide-container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        /* Slide Structural Styling with Cursor Glow Animations */
+        .slide {
+            background: linear-gradient(135deg, #0b1224 0%, #030714 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 3rem;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+            transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Cursor Glow Activation Modifiers */
+        .slide:hover {
+            border-color: rgba(197, 160, 89, 0.5);
+            box-shadow: 0 30px 60px rgba(197, 160, 89, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .slide::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background-color: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+
+        .slide:hover::before {
+            width: 8px;
+        }
+
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.25rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .slide-tag {
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+        }
+
+        .slide-number {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-family: "Courier New", Courier, monospace;
+            font-weight: bold;
+        }
+
+        h2 {
+            color: var(--text-main);
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        /* Layout Grid System */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .grid-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Cursor-Responsive UI Cards */
+        .card {
+            background-color: rgba(11, 18, 36, 0.7);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.75rem;
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+                        border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+                        background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-gold);
+            background-color: rgba(197, 160, 89, 0.04);
+        }
+
+        .card-stat {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-body {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+        }
+
+        .total-banner {
+            background-color: var(--panel-purple);
+            border: 1px solid var(--alert-purple);
+            padding: 1.25rem;
+            border-radius: 8px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            letter-spacing: 0.02em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slide-container">
+
+    <!-- SLIDE 4: HIGH-VELOCITY YIELD ARCHITECTURE -->
+    <section class="slide" id="slide-4">
+        <div class="slide-header">
+            <span class="slide-tag">03. Financial Engine Overviews</span>
+            <h2>High-Velocity Yield Architecture</h2>
+            <span class="slide-number">Slide 04</span>
+        </div>
+        <div class="total-banner">
+            Grand Total Net Simulated System Revenue Baseline: ₹379.05 Crore Net (GST Extra)
+        </div>
+        
+        <div class="grid-3" style="margin-bottom: 2.5rem;">
+            <div class="card">
+                <div class="card-title">Fixed Subscription Base</div>
+                <div class="card-stat">₹40.25 Cr</div>
+                <div class="card-body">4,900 Active Accounts delivering highly predictable corporate and retail contract annuities.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">On-Premise Windfalls</div>
+                <div class="card-stat">₹228.80 Cr</div>
+                <div class="card-body">High-turnover internal spending vectors (Immersive Audio Disco + Banquet Buyouts + Cover Charges).</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Global Concierge Desk</div>
+                <div class="card-stat">₹110.00 Cr</div>
+                <div class="card-body">Net retained margin arbitrage yielding directly from our strategic global Marriott inventory alliance.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Global Concierge Arbitrage Pipeline (Global Marriott Luxury Alliance)</div>
+            <p style="color: #cbd5e1; font-size: 0.95rem; margin-bottom: 1.25rem;">
+                Operating through an exclusive commercial framework securing a <strong>50% wholesale inventory discount across global Marriott luxury flags</strong>, while jet flight logs and global talent curation run cleanly at pass-through actuals:
+            </p>
+            <div class="grid-2" style="font-size: 0.9rem; color: #cbd5e1; gap: 1rem;">
+                <div>• <strong>Domestic Circuit Engine:</strong> 100 Indian pairs p.a. executing 2-day itineraries at a ₹10 Lakh/day baseline.</div>
+                <div>• <strong>Global Inbound & Outbound:</strong> Curated 5-day global multi-city routing operations at a premium ₹20 Lakh/day baseline.</div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sovereign Corridor Project - Slide 05 (Fixed Subscriptions & Structural Float)</title>
+    <style>
+        :root {
+            --bg-color: #040812;
+            --card-bg: #0b1224;
+            --accent-gold: #c5a059;
+            --text-main: #f8fafc;
+            --text-muted: #64748b;
+            --border-color: #1e293b;
+            --success-green: #10b981;
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --code-font: "Courier New", Courier, monospace;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 2rem 1.5rem;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .slide-container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        /* Slide Structural Styling with Cursor Glow Animations */
+        .slide {
+            background: linear-gradient(135deg, #0b1224 0%, #030714 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 3rem;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+            transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Cursor Glow Activation Modifiers */
+        .slide:hover {
+            border-color: rgba(197, 160, 89, 0.5);
+            box-shadow: 0 30px 60px rgba(197, 160, 89, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .slide::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background-color: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+
+        .slide:hover::before {
+            width: 8px;
+        }
+
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.25rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .slide-tag {
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+        }
+
+        .slide-number {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-family: var(--code-font);
+            font-weight: bold;
+        }
+
+        h2 {
+            color: var(--text-main);
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        /* High-Legibility Monospaced Data Tables */
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: #070c17;
+            margin: 1.5rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th {
+            background-color: #0b1224;
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            padding: 14px 18px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        td {
+            padding: 14px 18px;
+            font-size: 0.9rem;
+            border-bottom: 1px solid var(--border-color);
+            color: #cbd5e1;
+            transition: background-color 0.15s ease, color 0.15s ease;
+        }
+
+        /* Cursor Row Synchronization */
+        tr:hover td {
+            background-color: rgba(255, 255, 255, 0.03);
+            color: #fff;
+        }
+
+        .num-right { text-align: right; }
+        .font-mono { font-family: var(--code-font); }
+    </style>
+</head>
+<body>
+
+<div class="slide-container">
+
+    <!-- SLIDE 5: FIXED SUBSCRIPTIONS & STRUCTURAL FLOAT -->
+    <section class="slide" id="slide-5">
+        <div class="slide-header">
+            <span class="slide-tag">04. Subscription Frameworks</span>
+            <h2>Fixed Subscriptions & Structural Float</h2>
+            <span class="slide-number">Slide 05</span>
+        </div>
+        <div class="subtitle" style="margin-top: -1rem; margin-bottom: 2rem;">₹40.25 Crore Contracted Annual Base Architecture</div>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subscription Asset Category</th>
+                        <th>Operational Matrix & Run-Rate</th>
+                        <th class="num-right font-mono">Net Annual Revenue</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Individual Accounts (B2C)</strong></td>
+                        <td>4,000 active premium members × ₹50,000 p.a.</td>
+                        <td class="num-right font-mono" style="color: var(--accent-gold); font-weight: 700;">₹20.00 Cr</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Corporate Retainers (B2B)</strong></td>
+                        <td>900 corporate accounts × ₹2,25,000 p.a. (5 elite cards allocated per firm)</td>
+                        <td class="num-right font-mono" style="color: var(--accent-gold); font-weight: 700;">₹20.25 Cr</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Balance Sheet Float Buffer</strong></td>
+                        <td>Permanent interest-free internal wallet float (₹25k Individual / ₹1.5L Corporate minimum balances)</td>
+                        <td class="num-right font-mono" style="color: var(--text-muted);">₹23.50 Cr Float</td>
+                    </tr>
+                    <tr>
+                        <td><strong>VVIP Advance Matrix</strong></td>
+                        <td>Day-1 cash captured upfront from 20-Year pre-paid patrons (500 B2C / 100 B2B anchors)</td>
+                        <td class="num-right font-mono" style="color: var(--success-green); font-weight: 700;">₹95.00 Cr</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sovereign Corridor Project - Slide 06 (On-Premise High-Velocity & Global Concierge Performance)</title>
+    <style>
+        :root {
+            --bg-color: #040812;
+            --card-bg: #0b1224;
+            --accent-gold: #c5a059;
+            --text-main: #f8fafc;
+            --text-muted: #64748b;
+            --border-color: #1e293b;
+            --success-green: #10b981;
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --code-font: "Courier New", Courier, monospace;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 2rem 1.5rem;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .slide-container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        /* Slide Structural Styling with Cursor Glow Animations */
+        .slide {
+            background: linear-gradient(135deg, #0b1224 0%, #030714 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 3rem;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+            transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Cursor Glow Activation Modifiers */
+        .slide:hover {
+            border-color: rgba(197, 160, 89, 0.5);
+            box-shadow: 0 30px 60px rgba(197, 160, 89, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .slide::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background-color: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+
+        .slide:hover::before {
+            width: 8px;
+        }
+
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.25rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .slide-tag {
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+        }
+
+        .slide-number {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-family: var(--code-font);
+            font-weight: bold;
+        }
+
+        h2 {
+            color: var(--text-main);
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        h3 {
+            color: var(--accent-gold);
+            font-size: 1.25rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        /* High-Legibility Monospaced Data Tables */
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: #070c17;
+            margin: 1rem 0 2rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th {
+            background-color: #0b1224;
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            padding: 14px 18px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        td {
+            padding: 14px 18px;
+            font-size: 0.9rem;
+            border-bottom: 1px solid var(--border-color);
+            color: #cbd5e1;
+            transition: background-color 0.15s ease, color 0.15s ease;
+        }
+
+        /* Cursor Row Synchronization */
+        tr:hover td {
+            background-color: rgba(255, 255, 255, 0.03);
+            color: #fff;
+        }
+
+        .num-right { text-align: right; }
+        .font-mono { font-family: var(--code-font); }
+    </style>
+</head>
+<body>
+
+<div class="slide-container">
+
+    <!-- SLIDE 6: ON-PREMISE HIGH-VELOCITY & GLOBAL CONCIERGE PERFORMANCE -->
+    <section class="slide" id="slide-6">
+        <div class="slide-header">
+            <span class="slide-tag">05. High-Yield Metrics</span>
+            <h2>On-Premise High-Velocity & Global Concierge Performance</h2>
+            <span class="slide-number">Slide 06</span>
+        </div>
+        <div class="subtitle" style="margin-top: -1rem; margin-bottom: 1.5rem;">₹338.80 Crore Combined Operational Inflow Core (GST Extra)</div>
+        
+        <h3>1. Internal High-Turnover Channels</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Windfall Transaction Channel</th>
+                        <th>Volume Assumptions &amp; Operational Mechanics</th>
+                        <th class="num-right font-mono">Net Annual Revenue</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Bespoke Audio Discothèque</strong></td>
+                        <td>4-hour couples' tracks (50 pairs nightly) • ₹25k weekday / ₹40k weekend per-person entry</td>
+                        <td class="num-right font-mono" style="color: var(--accent-gold); font-weight: 700;">₹114.40 Cr</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Corporate Banquet Buyouts</strong></td>
+                        <td>100-delegate luxury MICE operations (2 buyouts/week running a ₹75L weekday / ₹1.25 Cr weekend grid)</td>
+                        <td class="num-right font-mono" style="color: var(--accent-gold); font-weight: 700;">₹104.00 Cr</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Transit Wellness Cover Charges</strong></td>
+                        <td>10,400 weekday non-member entries p.a. × ₹10,000 consumable floor (Transit Pavilion)</td>
+                        <td class="num-right font-mono" style="color: var(--accent-gold); font-weight: 700;">₹10.40 Cr</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>2. Global Marriott Concierge Retainers (50% Cost Discount Floor)</h3>
+        <p style="color: #cbd5e1; font-size: 0.95rem; margin-bottom: 1rem;">
+            This vertical locks down a mandatory <strong>50% wholesale inventory discount across global Marriott luxury flags</strong>, while intercontinental private jets and celebrity curators are pass-through variables processed strictly at actual cost:
+        </p>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Global Concierge Track</th>
+                        <th>Volume &amp; Itinerary Assumptions</th>
+                        <th class="num-right font-mono">Gross Inflow</th>
+                        <th class="num-right font-mono">Net Retained Arbitrage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Inbound Foreign Track</strong></td>
+                        <td>100 foreign couples × 5 days @ ₹20 Lakh/day premium base</td>
+                        <td class="num-right font-mono" style="color: var(--text-muted);">₹100.00 Cr</td>
+                        <td class="num-right font-mono" style="color: var(--success-green); font-weight: 700;">₹75.00 Cr</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Outbound Indian Track</strong></td>
+                        <td>100 domestic promoter couples × 5 days @ ₹20 Lakh/day premium base</td>
+                        <td class="num-right font-mono" style="color: var(--text-muted);">₹100.00 Cr</td>
+                        <td class="num-right font-mono" style="color: var(--success-green); font-weight: 700;">₹20.00 Cr*</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Domestic Circuit Track</strong></td>
+                        <td>100 Indian pairs × 2 days @ ₹10 Lakh/day baseline corridor base</td>
+                        <td class="num-right font-mono" style="color: var(--text-muted);">₹20.00 Cr</td>
+                        <td class="num-right font-mono" style="color: var(--success-green); font-weight: 700;">₹15.00 Cr</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="font-size: 0.78rem; color: var(--accent-gold); font-family: var(--code-font); margin-top: 0.5rem;">
+            *Outbound Indian track optimized down to conform explicitly with localized target baseline parameter constraints.
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sovereign Corridor Project - Slide 07 (Capital Retirement & SHA Exit Covenants)</title>
+    <style>
+        :root {
+            --bg-color: #040812;
+            --card-bg: #0b1224;
+            --accent-gold: #c5a059;
+            --text-main: #f8fafc;
+            --text-muted: #64748b;
+            --border-color: #1e293b;
+            --success-green: #10b981;
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --code-font: "Courier New", Courier, monospace;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 2rem 1.5rem;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .slide-container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        /* Slide Structural Styling with Cursor Glow Animations */
+        .slide {
+            background: linear-gradient(135deg, #0b1224 0%, #030714 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 3rem;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+            transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Cursor Glow Activation Modifiers */
+        .slide:hover {
+            border-color: rgba(197, 160, 89, 0.5);
+            box-shadow: 0 30px 60px rgba(197, 160, 89, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .slide::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background-color: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+
+        .slide:hover::before {
+            width: 8px;
+        }
+
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.25rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .slide-tag {
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+        }
+
+        .slide-number {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-family: var(--code-font);
+            font-weight: bold;
+        }
+
+        h2 {
+            color: var(--text-main);
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        h3 {
+            color: var(--accent-gold);
+            font-size: 1.25rem;
+            margin-bottom: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        /* Layout Grid System */
+        .layout-main-side {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+
+        @media (min-width: 992px) {
+            .layout-main-side {
+                grid-template-columns: 1.25fr 0.75fr;
+            }
+        }
+
+        /* Bullet Points Formatting */
+        ul {
+            padding-left: 1.25rem;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 1rem;
+            color: #cbd5e1;
+            font-size: 1rem;
+        }
+
+        li strong {
+            color: var(--accent-gold);
+        }
+
+        .sub-bullet-text {
+            display: block;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
+        /* Shareholders' Agreement Legal Covenants */
+        .legal-frame {
+            background-color: #060a14;
+            border-left: 3px solid var(--accent-gold);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 1.5rem;
+            transition: background-color 0.25s ease, border-left-width 0.25s ease;
+        }
+
+        .legal-frame:hover {
+            background-color: rgba(197, 160, 89, 0.03);
+            border-left-width: 5px;
+        }
+
+        .legal-caption {
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.5rem;
+        }
+
+        .legal-verbatim {
+            font-family: var(--code-font);
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            text-align: justify;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slide-container">
+
+    <!-- SLIDE 7: CAPITAL RETIREMENT & SHA EXIT COVENANTS -->
+    <section class="slide" id="slide-7">
+        <div class="slide-header">
+            <span class="slide-tag">06. Liquidation & Exit Architecture</span>
+            <h2>Capital Retirement Dynamics & SHA Exit Covenants</h2>
+            <span class="slide-number">Slide 07</span>
+        </div>
+        <div class="layout-main-side">
+            <div>
+                <h3>The Absolute Takeover Amortization Blueprint</h3>
+                <p style="color: #cbd5e1; margin-bottom: 1.5rem;">
+                    Deploying the dynamic ₹379.05 Crore net annual cash waterfall completely clears corporate liabilities ahead of schedule, insulating the primary equity syndicate.
+                </p>
+                <ul>
+                    <li>
+                        <strong>Debt Erased inside 6 Months:</strong> 
+                        The initial ₹125 Crore institutional borrowing (9% p.a.) is completely wiped off the asset registry.
+                        <span class="sub-bullet-text">Cleared rapidly using gross early subscription flows and pre-paid VVIP advance reserves.</span>
+                    </li>
+                    <li>
+                        <strong>Massive Payout Accumulation:</strong> 
+                        By terminating debt obligations immediately, the system maximizes treasury build-up.
+                        <span class="sub-bullet-text">The recurring engine stacks over ₹450 Crore in unencumbered cash accruals on the balance sheet by Year 4.</span>
+                    </li>
+                    <li>
+                        <strong>Compulsory Share Buyback:</strong> 
+                        At exactly Year 5.0, the Shareholders' Agreement (SHA) activates a hard compulsory exit.
+                        <span class="sub-bullet-text">Redeems the Cat II AIF partners at their rigid 14% Compounded IRR Cap and delivers 100% sole ownership back to you.</span>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <div class="legal-frame">
+                    <div class="legal-caption">Clause 7.1: Compulsory Call Option Trigger</div>
+                    <div class="legal-text">
+                        "At the expiry of sixty (60) calendar months from the Closing Date, the Promoter holds an absolute, unconditional Call Option to purchase, and the Investor Syndicate is contractually mandated to sell, 100% of the Equity Securities at the pre-agreed IRR ceiling."
+                    </div>
+                </div>
+                <div class="legal-frame">
+                    <div class="legal-caption">Clause 7.3: Forfeiture of Rights</div>
+                    <div class="legal-text">
+                        "Failure to execute mandatory share transfer forms within thirty (30) days of the exit window notice triggers immediate automated forfeiture of all voting rights, information channels, and board allocations, moving exit capital to secure escrow."
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="border-top: 1px solid var(--border-color); padding-top: 2rem; margin-top: 2rem; text-align: center;">
+            <h3 style="color: var(--accent-gold); margin-bottom: 0.5rem;">Secure Strategic Access</h3>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0;">Definitive SHA Drafts, Escrow Blueprints, and Technical Schematics Released Under Private Gated NDAs.</p>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
 
