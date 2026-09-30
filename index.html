@@ -2171,7 +2171,6 @@
 </div></section>
 
 </div>
-<nav><button id="prev">Back</button><span id="pos"></span><button id="next">Next</button></nav>
 <script>
 const S=[...document.querySelectorAll(".slide")];let i=0;
 function go(n){i=Math.max(0,Math.min(S.length-1,n));S.forEach((s,k)=>s.classList.toggle("on",k===i));S[i].scrollTop=0;
