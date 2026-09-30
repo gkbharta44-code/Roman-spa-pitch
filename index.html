@@ -3,6 +3,338 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sovereign Corridor Project - Capital Allocation Executive View</title>
+    <style>
+        :root {
+            --bg-color: #060a12;
+            --card-bg: #0d1527;
+            --accent-gold: #c5a059;
+            --text-main: #f1f5f9;
+            --text-muted: #64748b;
+            --border-color: #1e293b;
+            --success-green: #10b981;
+            --alert-red: #ef4444;
+            --panel-purple: #1e1b4b;
+            --alert-purple: #4338ca;
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --code-font: "Courier New", Courier, monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1040px;
+            margin: 0 auto;
+        }
+
+        /* Responsive Layout Grid */
+        .layout-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (min-width: 992px) {
+            .layout-grid {
+                grid-template-columns: 1.2fr 0.8fr;
+            }
+        }
+
+        /* Typography */
+        h1 {
+            color: var(--accent-gold);
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+        }
+
+        h2 {
+            color: var(--accent-gold);
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        /* Components */
+        .highlight-box {
+            background: linear-gradient(135deg, #1e293b 0%, #131a30 100%);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+        }
+
+        .highlight-box p {
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+
+        .metrics-shelf {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .metric-tile {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 1.25rem;
+            text-align: center;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .metric-tile:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-gold);
+        }
+
+        .metric-tile .tile-title {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        .metric-tile .tile-value {
+            color: var(--accent-gold);
+            font-size: 1.7rem;
+            font-weight: 700;
+        }
+
+        .metric-tile .tile-value.green { color: var(--success-green); }
+        .metric-tile .tile-value.red { color: var(--alert-red); }
+
+        .total-banner {
+            background-color: var(--panel-purple);
+            border: 1px solid var(--alert-purple);
+            padding: 1rem;
+            border-radius: 6px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* Interactive Accordion Panel */
+        .accordion-panel {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            background-color: #111827;
+            padding: 1rem 1.25rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            user-select: none;
+        }
+
+        .accordion-header:hover {
+            color: var(--accent-gold);
+        }
+
+        .accordion-content {
+            padding: 1.25rem;
+        }
+
+        /* Lists */
+        .stream-list {
+            list-style: none;
+        }
+
+        .stream-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 0.85rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .stream-item:last-child {
+            border-bottom: none;
+        }
+
+        .stream-info {
+            max-width: 75%;
+        }
+
+        .stream-name {
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+
+        .stream-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.15rem;
+        }
+
+        .stream-amount {
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-size: 1.1rem;
+            white-space: nowrap;
+        }
+
+        /* Legal Block styling */
+        .legal-block {
+            background-color: #090e1a;
+            border-left: 3px solid var(--accent-gold);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .legal-num {
+            font-family: var(--font-stack);
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+
+        .legal-text {
+            font-family: var(--code-font);
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            text-align: justify;
+        }
+
+        /* Scannable Table Layout */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin: 1rem 0;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #111827;
+            text-align: left;
+        }
+
+        th {
+            background-color: #0d131f;
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            padding: 10px 14px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        td {
+            padding: 10px 14px;
+            font-size: 0.85rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .ar-right { text-align: right; }
+        .bold-val { font-weight: 700; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>The Sovereign Corridor Project</h1>
+        <div class="subtitle">Institutional Optimization View & Systemic Repayment Engine</div>
+    </header>
+
+    <div class="highlight-box">
+        <p><strong>Operational Verdict Update:</strong> Deploying the <strong>₹95 Crore upfront structural cash float</strong> directly blocks balance sheet vulnerability. Net construction debt scales down to a protected <strong>₹30 Crore layer</strong>, anchoring an elite <strong>41.5x Debt Service Coverage Ratio (DSCR)</strong>.</p>
+    </div>
+
+    <!-- Top Key Metrics Shelf -->
+    <div class="metrics-shelf">
+        <div class="metric-tile">
+            <div class="tile-title">Adjusted Principal</div>
+            <div class="tile-value">₹30.00 Cr</div>
+            <div class="subtext" style="font-size:0.75rem; color:var(--text-muted); margin-top:0.25rem;">Down from ₹125 Cr Pool</div>
+        </div>
+        <div class="metric-tile">
+            <div class="tile-title">Debt Payload Drag</div>
+            <div class="tile-value red">9.00% p.a.</div>
+            <div class="subtext" style="font-size:0.75rem; color:var(--text-muted); margin-top:0.25rem;">20-Year Amortization Base</div>
+        </div>
+        <div class="metric-tile">
+            <div class="tile-title">System Performance</div>
+            <div class="tile-value green">41.5x DSCR</div>
+            <div class="subtext" style="font-size:0.75rem; color:var(--text-muted); margin-top:0.25rem;">Institutional Grade Security</div>
+        </div>
+    </div>
+
+    <div class="total-banner">
+        Grand Total Net Annualized System Revenue: ₹154.47 Crore Net (GST Extra)
+    </div>
+
+    <!-- Main Operational Columns -->
+    <div class="layout-grid">
+        
+        <!-- Left Column: Financial Performance and Tracking Matrix -->
+        <main>
+            <div class="accordion-panel">
+                <div class="accordion-header">
+                    <span>1. RECURRING INFLOW ENGINE ALLOCATION</span>
+                    <span style="color:var(--accent-gold); font-size:0.85rem;">▼ VIEW ALL</span>
+                </div>
+                <div class="accordion-content">
+                    <ul class="stream-list">
+                        <li class="stream-item">
+                            <div class="stream-info">
+                                <div class="stream-name">Corporate Banquet & MICE Buyouts</div>
+
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pitch Deck - The Sovereign Corridor Project (₹20 Cr Institutional Allocation)</title>
     <style>
         :root {
